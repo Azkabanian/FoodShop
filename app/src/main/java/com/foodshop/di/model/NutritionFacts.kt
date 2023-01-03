@@ -1,5 +1,6 @@
-package com.foodshop.data.model
+package com.foodshop.di.model
 
+@kotlinx.serialization.Serializable
 data class NutritionFacts(
     val calories: Double,
     val carbohydrates: Double,
