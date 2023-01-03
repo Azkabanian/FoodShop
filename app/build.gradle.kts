@@ -3,6 +3,7 @@ import com.android.build.api.dsl.ApplicationDefaultConfig
 plugins {
     id ("com.android.application")
     id ("org.jetbrains.kotlin.android")
+    kotlin("plugin.serialization") version "1.7.20"
 }
 
 android {
@@ -54,9 +55,13 @@ dependencies {
 
     //Retrofit
     implementation ("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation ("com.squareup.retrofit2:converter-gson:2.9.0")
 
     //Kotlinx Serialization
     implementation ("org.jetbrains.kotlinx:kotlinx-serialization-json:1.4.1")
+
+    //Koin
+    implementation("io.insert-koin:koin-android:3.3.0")
 }
 
 fun ApplicationDefaultConfig.buildConfigFieldFromGradleProperty(gradlePropertyName: String) {
